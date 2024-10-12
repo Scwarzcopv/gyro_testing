@@ -5,14 +5,14 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="Hill Cipher">
+	<meta name="description" content="Gyro Testing">
 	<meta name="author" content="scwarzcopv">
-	<meta name="keywords" content="aplikasi, perhitungan, hill cipher, matrix, matrik, ordo 5x5, ordo 5x1">
+	<meta name="keywords" content="aplikasi, gyro, testing">
 
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link rel="shortcut icon" href="src/img/custom_avatars/logo.png"/>
 
-	<title>Hill Cipher</title>
+	<title>Gyro Testing</title>
 
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -37,15 +37,15 @@
 						</p>
 					</div>
 
-					<div class="card box-44 container" id="form_input">
-						<div class="card-body">
-							<div class="m-sm-4">
+					<div class="card box-44 container mb-5" id="form_input">
+						<div class="card-body py-4">
+							<div id="deviceOrientation">
 								<div class="text-center mb-3">
 									<!-- <img src="src/img/custom_avatars/amba.jpeg" alt="Charles Hall"
 										class="img-fluid rounded-circle border border-success border-3" width="132" height="132" /> -->
-									<div class="lead fw-bold bg">Device Orientation</div>
+									<div class="lead fw-bold">Device Orientation</div>
 								</div>
-								<div class="mt-3 text-center" id="">
+								<div class="mt-2 text-center" id="">
 									<div class="d-flex align-items-center justify-content-center">
 										<table>
 											<tr>
@@ -85,17 +85,18 @@
 									</div>
 								</div>
 							</div>
-							<div class="m-sm-4">
-								<div class="text-center mb-3 mt-4">
+							<div id="deviceMotion_acceleration">
+								<div class="text-center mt-4">
 									<!-- <img src="src/img/custom_avatars/amba.jpeg" alt="Charles Hall"
 										class="img-fluid rounded-circle border border-success border-3" width="132" height="132" /> -->
-									<div class="lead fw-bold bg">Device Motion</div>
+									<blockquote class="lead fw-bold blockquote lh-1">Device Motion</blockquote>
+									<figcaption class="blockquote-footer lh-1">Acceleration</figcaption>
 								</div>
-								<div class="mt-3 text-center" id="">
+								<div class="mt-2 text-center" id="">
 									<div class="d-flex align-items-center justify-content-center">
 										<table>
 											<tr>
-												<td><div class="lead fw-bold text-end text-nowrap">Acceleration X</div></td>
+												<td><div class="lead fw-bold text-end text-nowrap">X</div></td>
 												<td><div class="px-2">:</div></td>
 												<td>
 													<input class="button-55 button-55-focus w-100 py-1 text-center" type="text" name="" id="gyro_testing_acceleration_x" placeholder="X" readonly />
@@ -103,7 +104,7 @@
 												<td><div class="ms-1">m/s²</div></td>
 											</tr>
 											<tr>
-												<td><div class="lead fw-bold text-end text-nowrap">Acceleration Y</div></td>
+												<td><div class="lead fw-bold text-end text-nowrap">Y</div></td>
 												<td><div class="px-2">:</div></td>
 												<td>
 													<input class="button-55 button-55-focus w-100 py-1 text-center" type="text" name="" id="gyro_testing_acceleration_y" placeholder="Y" readonly />
@@ -111,12 +112,318 @@
 												<td><div class="ms-1">m/s²</div></td>
 											</tr>
 											<tr>
-												<td><div class="lead fw-bold text-end text-nowrap">Acceleration Z</div></td>
+												<td><div class="lead fw-bold text-end text-nowrap">Z</div></td>
 												<td><div class="px-2">:</div></td>
 												<td>
 													<input class="button-55 button-55-focus w-100 py-1 text-center" type="text" name="" id="gyro_testing_acceleration_z" placeholder="Z" readonly />
 												</td>
 												<td><div class="ms-1">m/s²</div></td>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</div>
+							<div id="deviceMotion_accelerationIncludingGravity">
+								<div class="text-center mt-4">
+									<!-- <img src="src/img/custom_avatars/amba.jpeg" alt="Charles Hall"
+										class="img-fluid rounded-circle border border-success border-3" width="132" height="132" /> -->
+									<blockquote class="lead fw-bold blockquote lh-1">Device Motion</blockquote>
+									<figcaption class="blockquote-footer lh-1">Acceleration (Including Gravity)</figcaption>
+								</div>
+								<div class="mt-2 text-center" id="">
+									<div class="d-flex align-items-center justify-content-center">
+										<table>
+											<tr>
+												<td><div class="lead fw-bold text-end text-nowrap">X</div></td>
+												<td><div class="px-2">:</div></td>
+												<td>
+													<input class="button-55 button-55-focus w-100 py-1 text-center" type="text" name="" id="gyro_testing_acceleration_g_x" placeholder="X" readonly />
+												</td>
+												<td><div class="ms-1">m/s²</div></td>
+											</tr>
+											<tr>
+												<td><div class="lead fw-bold text-end text-nowrap">Y</div></td>
+												<td><div class="px-2">:</div></td>
+												<td>
+													<input class="button-55 button-55-focus w-100 py-1 text-center" type="text" name="" id="gyro_testing_acceleration_g_y" placeholder="Y" readonly />
+												</td>
+												<td><div class="ms-1">m/s²</div></td>
+											</tr>
+											<tr>
+												<td><div class="lead fw-bold text-end text-nowrap">Z</div></td>
+												<td><div class="px-2">:</div></td>
+												<td>
+													<input class="button-55 button-55-focus w-100 py-1 text-center" type="text" name="" id="gyro_testing_acceleration_g_z" placeholder="Z" readonly />
+												</td>
+												<td><div class="ms-1">m/s²</div></td>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</div>
+							<div id="deviceMotion_rotationRate">
+								<div class="text-center mt-4">
+									<!-- <img src="src/img/custom_avatars/amba.jpeg" alt="Charles Hall"
+										class="img-fluid rounded-circle border border-success border-3" width="132" height="132" /> -->
+									<blockquote class="lead fw-bold blockquote lh-1">Device Motion</blockquote>
+									<figcaption class="blockquote-footer lh-1">Rotation Rate</figcaption>
+								</div>
+								<div class="mt-2 text-center" id="">
+									<div class="d-flex align-items-center justify-content-center">
+										<table>
+											<tr>
+												<td><div class="lead fw-bold text-end text-nowrap">Beta (x)</div></td>
+												<td><div class="px-2">:</div></td>
+												<td>
+													<input class="button-55 button-55-focus w-100 py-1 text-center" type="text" name="" id="gyro_testing_rotation_rate_x" placeholder="Beta (x)" readonly />
+												</td>
+											</tr>
+											<tr>
+												<td><div class="lead fw-bold text-end text-nowrap">Gamma (y)</div></td>
+												<td><div class="px-2">:</div></td>
+												<td>
+													<input class="button-55 button-55-focus w-100 py-1 text-center" type="text" name="" id="gyro_testing_rotation_rate_y" placeholder="Gamma (y)" readonly />
+												</td>
+											</tr>
+											<tr>
+												<td><div class="lead fw-bold text-end text-nowrap">Alpha (z)</div></td>
+												<td><div class="px-2">:</div></td>
+												<td>
+													<input class="button-55 button-55-focus w-100 py-1 text-center" type="text" name="" id="gyro_testing_rotation_rate_z" placeholder="Alpha (z)" readonly />
+												</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</div>
+							<div id="deviceMotion_interval">
+								<div class="text-center mt-4">
+									<!-- <img src="src/img/custom_avatars/amba.jpeg" alt="Charles Hall"
+										class="img-fluid rounded-circle border border-success border-3" width="132" height="132" /> -->
+									<blockquote class="lead fw-bold blockquote lh-1">Device Motion</blockquote>
+									<figcaption class="blockquote-footer lh-1">Interval</figcaption>
+								</div>
+								<div class="mt-2 text-center" id="">
+									<div class="d-flex align-items-center justify-content-center">
+										<table>
+											<tr>
+												<td><div class="lead fw-bold text-end text-nowrap">Interval</div></td>
+												<td><div class="px-2">:</div></td>
+												<td>
+													<input class="button-55 button-55-focus w-100 py-1 text-center" type="text" name="" id="gyro_testing_interval" placeholder="Interval" readonly />
+												</td>
+												<td><div class="ms-1">ms</div></td>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="text-center mt-5" id="judol2">
+						<h1 class="h2 fw-bold mb-4">Record (Min & Max)</h1>
+						<p class="lead">
+							<!-- <span class="fw-bold"></span> -->
+						</p>
+					</div>
+
+					<div class="card box-44 container mb-5" id="form_input">
+						<div class="card-body py-4">
+							<div class="d-flex align-items-center justify-content-center mb-3">
+								<button class="button-55 button-55-active fw-bold p-2 d-flex align-items-center" type="button" name="record" id="record">
+									Record
+									<div class="position-relative ms-1 p-0 text-danger border border-2 border-secondary rounded-circle d-flex align-items-center justify-content-center" style="width: 27px; height: 27px;">
+										<div class="position-absolute top-50 start-50 translate-middle" style="line-height: 0;"><i class="fa-solid fa-circle"></i></div>
+									</div>
+								</button>
+								<button class="button-55 button-55-active fw-bold p-2 d-flex align-items-center" type="button" name="record" id="record">
+									Stop Record
+									<div class="position-relative ms-1 p-0 text-danger border border-2 border-secondary rounded-circle d-flex align-items-center justify-content-center" style="width: 27px; height: 27px;">
+										<div class="position-absolute top-50 start-50 translate-middle" style="line-height: 0;"><i class="fa-solid fa-stop"></i></div>
+									</div>
+								</button>
+							</div>
+							<div id="deviceOrientation">
+								<div class="text-center mb-3">
+									<!-- <img src="src/img/custom_avatars/amba.jpeg" alt="Charles Hall"
+										class="img-fluid rounded-circle border border-success border-3" width="132" height="132" /> -->
+									<div class="lead fw-bold">Device Orientation</div>
+								</div>
+								<div class="mt-2 text-center" id="">
+									<div class="d-flex align-items-center justify-content-center">
+										<table>
+											<tr>
+												<td><div class="lead fw-bold text-end text-nowrap">Absolute</div></td>
+												<td><div class="px-2">:</div></td>
+												<td>
+													<input class="button-55 button-55-focus w-100 py-1 text-center" type="text" name="" id="rgyro_testing_absolute" placeholder="Absolute" readonly />
+												</td>
+											</tr>
+											<tr>
+												<td><div class="lead fw-bold text-end text-nowrap">Beta (x)</div></td>
+												<td><div class="px-2">:</div></td>
+												<td>
+													<input class="button-55 button-55-focus w-100 py-1 text-center" type="text" name="" id="rgyro_testing_beta" placeholder="Beta (-x)" readonly/>
+												</td>
+											</tr>
+											<tr>
+												<td colspan="2"></td>
+												<td>
+													<input class="button-55 button-55-focus w-100 py-1 text-center" type="text" name="" id="rgyro_testing_-beta" placeholder="Beta (x)" readonly />
+												</td>
+											</tr>
+											<tr>
+												<td><div class="lead fw-bold text-end text-nowrap">Gamma (y)</div></td>
+												<td><div class="px-2">:</div></td>
+												<td>
+													<input class="button-55 button-55-focus w-100 py-1 text-center" type="text" name="" id="gyro_testing_gamma" placeholder="Gamma (y)" readonly />
+												</td>
+											</tr>
+											<tr>
+												<td><div class="lead fw-bold text-end text-nowrap">Alpha (z)</div></td>
+												<td><div class="px-2">:</div></td>
+												<td>
+													<input class="button-55 button-55-focus w-100 py-1 text-center" type="text" name="" id="gyro_testing_alpha" placeholder="Alpha (z)" readonly />
+												</td>
+											</tr>
+											<tr>
+												<td colspan="3">
+													<input class="button-55 button-55-focus w-100 py-1 mt-2 text-center" type="text" name="" id="gyro_testing_rotation" placeholder="Rotation" readonly />
+												</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</div>
+							<div id="deviceMotion_acceleration">
+								<div class="text-center mt-4">
+									<!-- <img src="src/img/custom_avatars/amba.jpeg" alt="Charles Hall"
+										class="img-fluid rounded-circle border border-success border-3" width="132" height="132" /> -->
+									<blockquote class="lead fw-bold blockquote lh-1">Device Motion</blockquote>
+									<figcaption class="blockquote-footer lh-1">Acceleration</figcaption>
+								</div>
+								<div class="mt-2 text-center" id="">
+									<div class="d-flex align-items-center justify-content-center">
+										<table>
+											<tr>
+												<td><div class="lead fw-bold text-end text-nowrap">X</div></td>
+												<td><div class="px-2">:</div></td>
+												<td>
+													<input class="button-55 button-55-focus w-100 py-1 text-center" type="text" name="" id="gyro_testing_acceleration_x" placeholder="X" readonly />
+												</td>
+												<td><div class="ms-1">m/s²</div></td>
+											</tr>
+											<tr>
+												<td><div class="lead fw-bold text-end text-nowrap">Y</div></td>
+												<td><div class="px-2">:</div></td>
+												<td>
+													<input class="button-55 button-55-focus w-100 py-1 text-center" type="text" name="" id="gyro_testing_acceleration_y" placeholder="Y" readonly />
+												</td>
+												<td><div class="ms-1">m/s²</div></td>
+											</tr>
+											<tr>
+												<td><div class="lead fw-bold text-end text-nowrap">Z</div></td>
+												<td><div class="px-2">:</div></td>
+												<td>
+													<input class="button-55 button-55-focus w-100 py-1 text-center" type="text" name="" id="gyro_testing_acceleration_z" placeholder="Z" readonly />
+												</td>
+												<td><div class="ms-1">m/s²</div></td>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</div>
+							<div id="deviceMotion_accelerationIncludingGravity">
+								<div class="text-center mt-4">
+									<!-- <img src="src/img/custom_avatars/amba.jpeg" alt="Charles Hall"
+										class="img-fluid rounded-circle border border-success border-3" width="132" height="132" /> -->
+									<blockquote class="lead fw-bold blockquote lh-1">Device Motion</blockquote>
+									<figcaption class="blockquote-footer lh-1">Acceleration (Including Gravity)</figcaption>
+								</div>
+								<div class="mt-2 text-center" id="">
+									<div class="d-flex align-items-center justify-content-center">
+										<table>
+											<tr>
+												<td><div class="lead fw-bold text-end text-nowrap">X</div></td>
+												<td><div class="px-2">:</div></td>
+												<td>
+													<input class="button-55 button-55-focus w-100 py-1 text-center" type="text" name="" id="gyro_testing_acceleration_g_x" placeholder="X" readonly />
+												</td>
+												<td><div class="ms-1">m/s²</div></td>
+											</tr>
+											<tr>
+												<td><div class="lead fw-bold text-end text-nowrap">Y</div></td>
+												<td><div class="px-2">:</div></td>
+												<td>
+													<input class="button-55 button-55-focus w-100 py-1 text-center" type="text" name="" id="gyro_testing_acceleration_g_y" placeholder="Y" readonly />
+												</td>
+												<td><div class="ms-1">m/s²</div></td>
+											</tr>
+											<tr>
+												<td><div class="lead fw-bold text-end text-nowrap">Z</div></td>
+												<td><div class="px-2">:</div></td>
+												<td>
+													<input class="button-55 button-55-focus w-100 py-1 text-center" type="text" name="" id="gyro_testing_acceleration_g_z" placeholder="Z" readonly />
+												</td>
+												<td><div class="ms-1">m/s²</div></td>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</div>
+							<div id="deviceMotion_rotationRate">
+								<div class="text-center mt-4">
+									<!-- <img src="src/img/custom_avatars/amba.jpeg" alt="Charles Hall"
+										class="img-fluid rounded-circle border border-success border-3" width="132" height="132" /> -->
+									<blockquote class="lead fw-bold blockquote lh-1">Device Motion</blockquote>
+									<figcaption class="blockquote-footer lh-1">Rotation Rate</figcaption>
+								</div>
+								<div class="mt-2 text-center" id="">
+									<div class="d-flex align-items-center justify-content-center">
+										<table>
+											<tr>
+												<td><div class="lead fw-bold text-end text-nowrap">Beta (x)</div></td>
+												<td><div class="px-2">:</div></td>
+												<td>
+													<input class="button-55 button-55-focus w-100 py-1 text-center" type="text" name="" id="gyro_testing_rotation_rate_x" placeholder="Beta (x)" readonly />
+												</td>
+											</tr>
+											<tr>
+												<td><div class="lead fw-bold text-end text-nowrap">Gamma (y)</div></td>
+												<td><div class="px-2">:</div></td>
+												<td>
+													<input class="button-55 button-55-focus w-100 py-1 text-center" type="text" name="" id="gyro_testing_rotation_rate_y" placeholder="Gamma (y)" readonly />
+												</td>
+											</tr>
+											<tr>
+												<td><div class="lead fw-bold text-end text-nowrap">Alpha (z)</div></td>
+												<td><div class="px-2">:</div></td>
+												<td>
+													<input class="button-55 button-55-focus w-100 py-1 text-center" type="text" name="" id="gyro_testing_rotation_rate_z" placeholder="Alpha (z)" readonly />
+												</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</div>
+							<div id="deviceMotion_interval">
+								<div class="text-center mt-4">
+									<!-- <img src="src/img/custom_avatars/amba.jpeg" alt="Charles Hall"
+										class="img-fluid rounded-circle border border-success border-3" width="132" height="132" /> -->
+									<blockquote class="lead fw-bold blockquote lh-1">Device Motion</blockquote>
+									<figcaption class="blockquote-footer lh-1">Interval</figcaption>
+								</div>
+								<div class="mt-2 text-center" id="">
+									<div class="d-flex align-items-center justify-content-center">
+										<table>
+											<tr>
+												<td><div class="lead fw-bold text-end text-nowrap">Interval</div></td>
+												<td><div class="px-2">:</div></td>
+												<td>
+													<input class="button-55 button-55-focus w-100 py-1 text-center" type="text" name="" id="gyro_testing_interval" placeholder="Interval" readonly />
+												</td>
+												<td><div class="ms-1">ms</div></td>
 											</tr>
 										</table>
 									</div>
@@ -293,6 +600,7 @@
 		// 	});
 		// }
 
+		let rotate;
 		function funcHandlerOrientation(event) {
 			const absolute =((event.absolute != null ? event.absolute.toString().replace(/\b[a-z]/g, function (letter) {
 				return letter.toUpperCase();
@@ -316,14 +624,31 @@
 			const acceleration_x = event.acceleration.x != null ? event.acceleration.x.toFixed(2) : null;
 			const acceleration_y = event.acceleration.y != null ? event.acceleration.y.toFixed(2) : null;
 			const acceleration_z = event.acceleration.z != null ? event.acceleration.z.toFixed(2) : null;
-
 			$('#gyro_testing_acceleration_x').val(acceleration_x);
 			$('#gyro_testing_acceleration_y').val(acceleration_y);
 			$('#gyro_testing_acceleration_z').val(acceleration_z);
+
+			const acceleration_g_x = event.accelerationIncludingGravity.x != null ? event.accelerationIncludingGravity.x.toFixed(2) : null;
+			const acceleration_g_y = event.accelerationIncludingGravity.y != null ? event.accelerationIncludingGravity.y.toFixed(2) : null;
+			const acceleration_g_z = event.accelerationIncludingGravity.z != null ? event.accelerationIncludingGravity.z.toFixed(2) : null;
+			$('#gyro_testing_acceleration_g_x').val(acceleration_g_x);
+			$('#gyro_testing_acceleration_g_y').val(acceleration_g_y);
+			$('#gyro_testing_acceleration_g_z').val(acceleration_g_z);
+			$('#gyro_testing_acceleration_z').val(acceleration_z);
+
+			const rotation_rate_beta = event.rotationRate.beta != null ? event.rotationRate.beta.toFixed(2) : null;
+			const rotation_rate_gamma = event.rotationRate.gamma != null ? event.rotationRate.gamma.toFixed(2) : null;
+			const rotation_rate_alpha = event.rotationRate.alpha != null ? event.rotationRate.alpha.toFixed(2) : null;
+			$('#gyro_testing_rotation_rate_x').val(rotation_rate_beta);
+			$('#gyro_testing_rotation_rate_y').val(rotation_rate_gamma);
+			$('#gyro_testing_rotation_rate_z').val(rotation_rate_alpha);
+			$('#gyro_testing_acceleration_z').val(acceleration_z);
+
+			const interval = event.interval != null ? event.interval.toFixed(2) : null;
+			$('#gyro_testing_interval').val(interval);
 		}
 		$(document).ready(function () {
 			// deviceorientation || devicemotion
-			let rotate;
 			window.addEventListener("deviceorientation", funcHandlerOrientation, true);
 			window.addEventListener("devicemotion", funcHandlerMotion, true);
 
