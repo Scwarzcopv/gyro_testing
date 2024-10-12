@@ -85,6 +85,43 @@
 									</div>
 								</div>
 							</div>
+							<div class="m-sm-4">
+								<div class="text-center mb-3 mt-4">
+									<!-- <img src="src/img/custom_avatars/amba.jpeg" alt="Charles Hall"
+										class="img-fluid rounded-circle border border-success border-3" width="132" height="132" /> -->
+									<div class="lead fw-bold bg">Device Motion</div>
+								</div>
+								<div class="mt-3 text-center" id="">
+									<div class="d-flex align-items-center justify-content-center">
+										<table>
+											<tr>
+												<td><div class="lead fw-bold text-end text-nowrap">Acceleration X</div></td>
+												<td><div class="px-2">:</div></td>
+												<td>
+													<input class="button-55 button-55-focus w-100 py-1 text-center" type="text" name="" id="gyro_testing_acceleration_x" placeholder="X" readonly />
+												</td>
+												<td><div class="ms-1">m/s²</div></td>
+											</tr>
+											<tr>
+												<td><div class="lead fw-bold text-end text-nowrap">Acceleration Y</div></td>
+												<td><div class="px-2">:</div></td>
+												<td>
+													<input class="button-55 button-55-focus w-100 py-1 text-center" type="text" name="" id="gyro_testing_acceleration_y" placeholder="Y" readonly />
+												</td>
+												<td><div class="ms-1">m/s²</div></td>
+											</tr>
+											<tr>
+												<td><div class="lead fw-bold text-end text-nowrap">Acceleration Z</div></td>
+												<td><div class="px-2">:</div></td>
+												<td>
+													<input class="button-55 button-55-focus w-100 py-1 text-center" type="text" name="" id="gyro_testing_acceleration_z" placeholder="Z" readonly />
+												</td>
+												<td><div class="ms-1">m/s²</div></td>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -256,29 +293,39 @@
 		// 	});
 		// }
 
-		let rotate;
 		function funcHandlerOrientation(event) {
-			const absolute =((event.absolute != null ? event.absolute : 0).toString()).replace(/\b[a-z]/g, function (letter) {
+			const absolute =((event.absolute != null ? event.absolute.toString().replace(/\b[a-z]/g, function (letter) {
 				return letter.toUpperCase();
-			});
-			const alpha = event.alpha != null ? event.alpha : 0;
-			const beta = event.beta != null ? event.beta : 0;
-			const gamma = event.gamma != null ? event.gamma : 0;
+			}) : null));
+			const alpha = event.alpha != null ? event.alpha.toFixed(2) : null;
+			const beta = event.beta != null ? event.beta.toFixed(2) : null;
+			const gamma = event.gamma != null ? event.gamma.toFixed(2) : null;
 
-			// Do stuff with the new orientation data
 			$('#gyro_testing_absolute').val(absolute);
-			$('#gyro_testing_beta').val((beta).toFixed(2));
-			$('#gyro_testing_gamma').val((gamma).toFixed(2));
-			$('#gyro_testing_alpha').val((alpha).toFixed(2));
+			$('#gyro_testing_beta').val(beta);
+			$('#gyro_testing_gamma').val(gamma);
+			$('#gyro_testing_alpha').val(alpha);
+
 			if (gamma < -60) rotate = 'Landscape-Left';
 			else if (gamma > 60) rotate = 'Landscape-Right';
 			if (beta < -60) rotate = 'Potrait-Down';
 			else if (beta > 60) rotate = 'Potrait-Up';
 			$('#gyro_testing_rotation').val(rotate);
 		}
+		function funcHandlerMotion(event) {
+			const acceleration_x = event.acceleration.x != null ? event.acceleration.x.toFixed(2) : null;
+			const acceleration_y = event.acceleration.y != null ? event.acceleration.y.toFixed(2) : null;
+			const acceleration_z = event.acceleration.z != null ? event.acceleration.z.toFixed(2) : null;
+
+			$('#gyro_testing_acceleration_x').val(acceleration_x);
+			$('#gyro_testing_acceleration_y').val(acceleration_y);
+			$('#gyro_testing_acceleration_z').val(acceleration_z);
+		}
 		$(document).ready(function () {
 			// deviceorientation || devicemotion
+			let rotate;
 			window.addEventListener("deviceorientation", funcHandlerOrientation, true);
+			window.addEventListener("devicemotion", funcHandlerMotion, true);
 
 			// funcScrollXGrab("#dragSpace");
 			// funcScrollXWheel("#dragSpace");
